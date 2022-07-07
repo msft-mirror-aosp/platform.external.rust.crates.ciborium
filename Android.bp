@@ -35,5 +35,9 @@ rust_library {
         "libciborium_ll",
         "libserde",
     ],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
     vendor_available: true,
 }
