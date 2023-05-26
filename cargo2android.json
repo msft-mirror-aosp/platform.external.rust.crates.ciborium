@@ -2,5 +2,17 @@
   "device": true,
   "run": true,
   "dependencies": true,
-  "vendor-available": true
+  "variants": [
+    {
+    },
+    {
+      "alloc": true,
+      "dependency_suffix": "_nostd",
+      "features": "",
+      "force-rlib": true,
+      "no-host": true,
+      "suffix": "_nostd",
+      "no-std": true
+    }
+  ]
 }
