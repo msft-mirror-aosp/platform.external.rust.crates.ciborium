@@ -3,11 +3,14 @@
   "run": true,
   "dependencies": true,
   "variants": [
-    {
-    },
+    {},
     {
       "alloc": true,
-      "dependency_suffix": "_nostd",
+      "dep-suffixes": {
+        "ciborium_io": "_nostd",
+        "ciborium_ll": "_nostd",
+        "serde": "_nostd"
+      },
       "features": "",
       "force-rlib": true,
       "no-host": true,
