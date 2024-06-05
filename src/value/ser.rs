@@ -268,9 +268,13 @@ impl ser::Serializer for Serializer<()> {
             tag: None,
         }))
     }
+
+    fn is_human_readable(&self) -> bool {
+        false
+    }
 }
 
-impl<'a> ser::SerializeSeq for Serializer<Vec<Value>> {
+impl ser::SerializeSeq for Serializer<Vec<Value>> {
     type Ok = Value;
     type Error = Error;
 
@@ -286,7 +290,7 @@ impl<'a> ser::SerializeSeq for Serializer<Vec<Value>> {
     }
 }
 
-impl<'a> ser::SerializeTuple for Serializer<Vec<Value>> {
+impl ser::SerializeTuple for Serializer<Vec<Value>> {
     type Ok = Value;
     type Error = Error;
 
@@ -302,7 +306,7 @@ impl<'a> ser::SerializeTuple for Serializer<Vec<Value>> {
     }
 }
 
-impl<'a> ser::SerializeTupleStruct for Serializer<Vec<Value>> {
+impl ser::SerializeTupleStruct for Serializer<Vec<Value>> {
     type Ok = Value;
     type Error = Error;
 
@@ -318,7 +322,7 @@ impl<'a> ser::SerializeTupleStruct for Serializer<Vec<Value>> {
     }
 }
 
-impl<'a> ser::SerializeTupleVariant for Serializer<Named<Vec<Value>>> {
+impl ser::SerializeTupleVariant for Serializer<Named<Vec<Value>>> {
     type Ok = Value;
     type Error = Error;
 
@@ -356,7 +360,7 @@ impl<'a> ser::SerializeTupleVariant for Serializer<Named<Vec<Value>>> {
     }
 }
 
-impl<'a> ser::SerializeMap for Serializer<Map> {
+impl ser::SerializeMap for Serializer<Map> {
     type Ok = Value;
     type Error = Error;
 
@@ -381,7 +385,7 @@ impl<'a> ser::SerializeMap for Serializer<Map> {
     }
 }
 
-impl<'a> ser::SerializeStruct for Serializer<Vec<(Value, Value)>> {
+impl ser::SerializeStruct for Serializer<Vec<(Value, Value)>> {
     type Ok = Value;
     type Error = Error;
 
@@ -403,7 +407,7 @@ impl<'a> ser::SerializeStruct for Serializer<Vec<(Value, Value)>> {
     }
 }
 
-impl<'a> ser::SerializeStructVariant for Serializer<Named<Vec<(Value, Value)>>> {
+impl ser::SerializeStructVariant for Serializer<Named<Vec<(Value, Value)>>> {
     type Ok = Value;
     type Error = Error;
 
